@@ -40,8 +40,8 @@
 	
 	<body>
 		
-		<!--Home page goes here----------------------------------------------
-		--------------------------------------------------------------------->
+		<!- Home page goes here ------------------------------------------------>
+		
 		<section id = "homePage" data-role = "page">
 			
 			<header data-role = "header" data-id="hdtop" data-position="fixed">
@@ -63,9 +63,10 @@
 		<!-- Footer goes here -------------->
 		<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
 			<div data-role="controlgroup" data-type="horizontal" align = "center">
-				<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
 				<a href="#homePage" data-role = "button" data-icon="home" class = "ui-btn-active">Home</a>
-				<a href="#newsFeed" data-role = "button" data-icon="grid">Feed</a>
+				<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
+				<a href="#social" data-role = "button" data-icon="bars">Social</a>
+				<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
 			</div>
 		</footer>
 		
@@ -97,9 +98,10 @@
 			<!-- Footer goes here -------------->
 			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
 				<div data-role="controlgroup" data-type="horizontal" align = "center">
-					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
 					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid" class = "ui-btn-active">Feed</a>
+					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
+					<a href="#social" data-role = "button" data-icon="bars">Social</a>
+					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
 				</div>
 			</footer>
 		
@@ -131,9 +133,10 @@
 			<!-- Footer goes here -------------->
 			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
 				<div data-role="controlgroup" data-type="horizontal" align = "center">
-					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
 					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Feed</a>
+					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
+					<a href="#social" data-role = "button" data-icon="bars">Social</a>
+					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
 				</div>
 			</footer>
 		
@@ -165,9 +168,10 @@
 		   <!-- Footer goes here --------------> 
 		   <footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed"> 
 				<div data-role="controlgroup" data-type="horizontal" align = "center"> 
+					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
 					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>          
-					<a href="#homePage" data-role = "button" data-icon="home">Home</a> 
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Feed</a> 
+					<a href="#social" data-role = "button" data-icon="bars">Social</a>
+					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a> 
 			
 				</div> 
 		   </footer> 
@@ -183,7 +187,7 @@
 				<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true">Info</a>
 			</header>
 					
-			<!-- Content goes here --------->
+			<!-- Content goes here -->
 			<div data-role = "content" class = "content">
 				<form action = "" method = "post" id = "firstForm">
 					<div data-role = "fieldcontain">
@@ -260,15 +264,51 @@
 			<!-- Footer goes here -------------->
 			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
 				<div data-role="controlgroup" data-type="horizontal" align = "center">
-					<a href="#newEntry" data-role = "button" data-icon="plus" class = "ui-btn-active" id = "newBtn">New</a>       	
 					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Feed</a>
+					<a href="#newEntry" data-role = "button" data-icon="plus" class = "ui-btn-active" id = "newBtn">New</a>       	
+					<a href="#social" data-role = "button" data-icon="bars">Social</a>
+					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
 				</div>
 			</footer>
 		
 		</section> <!-- End of New Entry page -->
 
+		<!--Social page goes here----------------------------------------------
+		-------------------------------------------------------------------------->
+		<section id = "social" data-role = "page">
+			
+			<header data-role = "header" data-id="hdtop" data-position="fixed">
+				<h1>Social</h1>
+				<a href="#homePage" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="g" data-inline="true">Back</a>
+				<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true">Info</a>
+			</header>
+					
+			<!-- Content goes here -->
+			<div data-role = "content" class = "content">
+				<div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+				<div data-role="collapsible">
+					<h3>Section 1</h3>
+					<p>This is where my content goes.</p>
+				</div>
+
+				<div data-role="collapsible">
+					<h3>Section 2</h3>
+					<p>This is where my content goes.</p>
+				</div>
+				</div>
+			</div> <!-- content section ends here -->
+			
+			<!-- Footer goes here -------------->
+			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
+				<div data-role="controlgroup" data-type="horizontal" align = "center">
+					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
+					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
+					<a href="#social" data-role = "button" data-icon="bars" class="ui-btn-active" id="newBtn">Social</a>
+					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
+				</div>
+			</footer>
 		
+		</section> <!-- End of Social page -->
 		
 	</body>
 
