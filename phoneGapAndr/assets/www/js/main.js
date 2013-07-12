@@ -1,5 +1,5 @@
 // Name: Andrei Birsan
-// Course month: 05.2013
+// Course month: 07.2013
 // File Purpose: Basic Start-up Template
 
 
@@ -238,6 +238,30 @@ $(document).on('pageinit', '#newEntry', function(){
 
 });//here ends #newEntryPage
 
+//social page starts here
+$(document).on('pageinit', '#social', function(){
+	$(function() {
+		var url = "https://api.instagram.com/v1/tags/car/media/recent?callback=?&amp;client_id=7a7120bdcd664840a3ec1d43313ff8bc&amp;min_id=10";
+		$.getJSON(url, {
+			tagmode: "any",
+			format: "json"
+		})
+		.done(function(myData) {
+			console.log(myData);
+			var listView = ""
+			$.each(myData.data, function(i,item) {
+				var puf = '<li><a href="'+myData.data[i].link+'"><img src="'+myData.data[i].images.thumbnail.url+'"><h2>'+myData.data[i].user.full_name+'</h2><p>'+myData.data[i].user.id+'</p></a></li>';
+
+				$("#instColl").append(puf);
+
+				//refresh ulListView
+				$('#instColl').listview().listview('refresh');
+			});
+		});
+
+	}); //end function
+
+}); //end page
 
 
 //genRandomId function creates a random number and returns it to be caught by the validator 
