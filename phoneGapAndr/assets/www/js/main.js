@@ -241,23 +241,51 @@ $(document).on('pageinit', '#newEntry', function(){
 //social page starts here
 $(document).on('pageinit', '#social', function(){
 	$(function() {
-		var url = "https://api.instagram.com/v1/tags/car/media/recent?callback=?&amp;client_id=7a7120bdcd664840a3ec1d43313ff8bc&amp;min_id=10";
-		$.getJSON(url, {
+		var url1 = "https://api.instagram.com/v1/tags/car/media/recent?callback=?&amp;client_id=7a7120bdcd664840a3ec1d43313ff8bc&amp;min_id=10";
+		$.getJSON(url1, {
 			tagmode: "any",
 			format: "json"
 		})
-		.done(function(myData) {
-			console.log(myData);
-			var listView = ""
-			$.each(myData.data, function(i,item) {
-				var puf = '<li><a href="'+myData.data[i].link+'"><img src="'+myData.data[i].images.thumbnail.url+'"><h2>'+myData.data[i].user.full_name+'</h2><p>'+myData.data[i].user.id+'</p></a></li>';
+		.done(function(myData1) {
+			console.log(myData1);
+			
+			$.each(myData1.data, function(i,item) {
+				var puf1 = '<li><a href="#" data-rel="dialog" data-transition="pop"><img src="'+myData1.data[i].images.thumbnail.url+'"><h2>'+myData1.data[i].user.full_name+'</h2><p>'+myData1.data[i].user.id+'</p></a></li>';
 
-				$("#instColl").append(puf);
+				$("#instColl").append(puf1);
 
 				//refresh ulListView
 				$('#instColl').listview().listview('refresh');
 			});
 		});
+
+	}); //end function
+
+	$(function() {
+		
+		$.ajax({
+			url:"https://nactusberrilli.cloudant.com/hml/_all_docs",
+			dataType:"jsonp",
+			type: "GET",
+			crossDomain:true,
+			succes: function(myData2) {
+				
+			},
+			error: function() {alert("Error");},
+
+		})
+		.done(function(myData2) {
+
+			console.log(myData2);
+			$.each(myData2.rows, function(i,item) {
+				//var pObj = $.parseJSON(myData2);
+				var puf2 = '<li><a href="#" data-rel="dialog" data-transition="pop"><img src="images/arrowDown.png"><h2>'+myData2.rows[i].id+'</h2><p>From Coudant</p></a></li>';
+			
+				$("#grColl").append(puf2);
+				$("#grColl").listview().listview('refresh');
+			});
+		});
+		
 
 	}); //end function
 

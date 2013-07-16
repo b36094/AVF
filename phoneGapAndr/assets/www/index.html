@@ -28,7 +28,7 @@
 		
 		
 		<!--jQuery js files and its dependencies go here -->
-		
+		<script type = "text/javascript" src="cordova.js"></script>
 		<script type = "text/javascript" src="js/jquery-1.9.1.js"></script>
 		<script type = "text/javascript" src="js/jquery.mobile-1.3.1.js"></script>
 		<script type = "text/javascript" src="js/jquery.validate.min.js"></script>
@@ -286,17 +286,16 @@
 			<!-- Content goes here -->
 			<div data-role = "content" class = "content">
 				<div data-role="collapsible-set" data-theme="a" data-content-theme="a">
-				<div id="grColl" data-role="collapsible">
-					<h3>Section 1</h3>
-					<p>This is where my content goes.</p>
+				<div data-role="collapsible">
+					<h3>Cloudant API</h3>
+					<ul data-role="listview" data-inset="true" id="grColl">
+					 <!-- dynamic code input -->
 				</div>
 
 				<div data-role="collapsible">
 					<h3>Instagram API</h3>
 					<ul data-role="listview" data-inset="true" id="instColl">
-					 <!--dynamic code input-->
-					</ul>
-				</div>
+					 <!-- dynamic code input -->
 				</div>
 			</div> <!-- content section ends here -->
 			
@@ -311,8 +310,7 @@
 			</footer>
 		
 		</section> <!-- End of Social page -->
-	
-	<script type = "text/javascript" src="cordova.js"></script>	
+		
 	</body>
 
 </html>
