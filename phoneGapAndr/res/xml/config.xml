@@ -103,5 +103,9 @@
     </feature>
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
+      <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+      <plugin name="Geolocation" value="org.apache.cordova.geolocation.Geolocation" />
+      <plugin name="Compass" value="org.apache.cordova.CompassListener" />
+      <plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
     </plugins>
 </widget>

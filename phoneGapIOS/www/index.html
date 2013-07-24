@@ -1,316 +1,130 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 
-<!-- 		  Name:   Andrei Birsan, 
-		Class Name:   Advanced Visual Frameworks, 
-	  File Purpose:   Start-up Template -->
-	  
-<html>
-	
-	<head>
-		<title>Libby</title>
+	<html>	
+		<head>
+			<title>Libby</title>
+			
+			<meta charset = "utf-8"/>
+			<meta name = "description" content = "Media Library"/>
+			<meta name = "keywords" content = "Media Library, HTML5 Mobile App"/>
+			<meta name = "robots" content = "noindex, nofollow"/>
+			<meta name = "viewport" content = "user-scalabe = no, width = device-width"/>
+			<meta name = "viewport" content = "target-densitydpi = device-dpi"/>
+			<meta name = "HandheldFriendly" content = "true"/>
+			<meta name = "MobileOptimized" content = "320"/>
+			<meta name = "format-detection" content="telephone-no"/>
+			<meta name = "viewport" content="user-scalable=no"/>
+
+			<link rel="stylesheet" href="css/main.css"/>
+			<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css"/>
+
+			
+			<script type = "text/javascript" src="js/jquery-1.9.1.js"></script>
+			<script type = "text/javascript" src="js/jquery.mobile-1.3.1.js"></script>
+			<script type = "text/javascript" src="js/jquery.validate.min.js"></script>
+
+			
+			
+		</head>
 		
-		<!-- Meta Data -->
-		<meta charset = "utf-8"/>
-		<meta name = "description" content = "Media Library"/>
-		<meta name = "keywords" content = "Media Library, HTML5 Mobile App"/>
-		<meta name = "robots" content = "noindex, nofollow"/>
-		<meta name = "viewport" content = "user-scalabe = no, width = device-width"/>
-		<meta name = "viewport" content = "target-densitydpi = device-dpi"/>
-		<meta name = "HandheldFriendly" content = "true"/>
-		<meta name = "MobileOptimized" content = "320"/>
-		<meta name="format-detection" content="telephone-no>
-		<meta name="viewport" content="user-scalable=no", initial-scale=1, minimum-scale=1, maximum-scale=1,
-		width=device-width, height=device-height, target-densitydpi=device-dpi">
-		
-		<!--jQuery CSS files and the main.cs file goes here -->
-		<link rel="stylesheet" href="css/main.css"/>
-		<link rel="stylesheet" href="css/jquery.mobile-1.3.1.css"/>
-		
-		
-		<!--jQuery js files and its dependencies go here -->
+		<body>
+			<section data-role = "page" id = "mainPage">
+				<section data-role = "header" data-id = "hdtop" data-theme="c" data-content-theme="c" data-position="fixed">
+					<h3>Libby</h3>
+				</section>
+
+				<section data-role = "content">
+					<h5>&#x27b2;&nbsp;APIs</h5>
+					<div data-role="collapsible-set" data-theme="c" data-content-theme="c">
+						<div data-role="collapsible">
+						    <h5>Cloudant API</h5>
+						    <ul data-role="listview" data-inset="true" id="grColl">
+						       	<!-- Dynamic Code -->
+						    </ul>
+						</div>
+						<div data-role="collapsible">
+						    <h5>Instagram API</h5>
+						    <ul data-role="listview" data-inset="true" id="instColl">
+						       	<!-- Dynamic Code -->
+						    </ul>
+						</div>
+					</div>
+					
+					<h5>&#x27b2;&nbsp;Native Features</h5>
+					
+					<div data-role="collapsible-set" data-theme="c" data-content-theme="c">
+						<div data-role="collapsible">
+						    <h5>Camera Feature</h5>
+						    <ul data-role="listview" data-inset="true" id="camFt">
+						       	
+   								<button id="camBtn" data-inline="true">Take Picture</button>
+   								<img href = "#" id = "myImage"/>
+   								<!-- Dynamic Code -->
+						    </ul>
+						</div>
+						<div data-role="collapsible">
+						    <h5>GeoLocation Feature</h5>
+						    <ul data-role="listview" data-inset="true" id="geoFt">
+						       	<button id="geoBtn" data-inline="true">Get Geo</button>
+   								
+						    	<!-- Dynamic Code -->
+						    </ul>
+						</div>
+						<div data-role="collapsible">
+						    <h5>Compass Feature</h5>
+						    <ul data-role="listview" data-inset="true" id="storFt">
+						       	<p>
+   									<a href="#" data-role="button" id="compBtn" data-inline="true">Compas</a>
+   								</p>
+						       	<!-- Dynamic Code -->
+						    </ul>
+						</div>
+						<div data-role="collapsible">
+						    <h5>Accelerometer Feature</h5>
+						    <ul data-role="listview" data-inset="true" id="accFt">
+						       	<p>
+   									<a href="#" data-role="button" id="accBtn" data-inline="true">Compas</a>
+   								</p>
+						       	<!-- Dynamic Code -->
+						    </ul>
+						</div>
+						
+					</div>
+
+					<h5>&#x27b2;&nbsp;Resources</h5>
+					<div data-role="collapsible-set" data-theme="c" data-content-theme="c">
+						<div data-role="collapsible">
+						    <h5>Week 2 Post</h5>
+						    
+						       	<p><b>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</b></p>
+						       	<p>Twitter, as do all web social applications, relies heavily on login and payments services. From the beginning the user is being prompted with a login page to differentiate between several credentials and functionalities. Most extensive web-apps utilize a front-end portal access and and back-end portal access. In terms of the “live” data these web applications offer they benefit enormously from a logging system as well. Let's take for instance Twitter's API. After the client registers and activates the developer features, the Twitter's API generates a hexadecimal key to be implemented within the application or other APIs. Therefore, being able to differentiate between several users (loggers) is crucial. The payment features can vary depending on the widget or the service. In Twitter's case developers can make little plug-in or widgets that simplify certain processes. Some of these plug-ins are free and others aren't, and they can (sometimes) represent a good source of partial income for developers. Furthermore, on an API level, some hosts and web service creators (for instance: a weather API) can charge for offering their service to the developer community; also a pretty good source of income.</p>
+
+						       	<!-- Dynamic Code -->
+						    
+						</div>
+					</div>
+
+				</section>
+
+				<section data-role = "footer" data-id = "ftbottom" data-position="fixed" data-theme="c" data-content-theme="c">
+					<h5>&reg;&nbsp;2013</h5>
+				</section>
+			</section>
+
+			<section data-role="page" id="dynPage">
+				<section data-role = "header" data-id = "hdtop" data-theme="c" data-content-theme="c" data-position="fixed" data-add-back-btn="true">
+					<h3>Libby</h3>
+				</section>
+
+				<section data-role = "content">
+					<iframe id="iFr"></iframe>
+				</section>
+
+				<section data-role = "footer" data-id = "ftbottom" data-position="fixed" data-theme="c" data-content-theme="c">
+					<h5>&reg;&nbsp;2013</h5>
+				</section>
+			</section>
 		<script type = "text/javascript" src="cordova.js"></script>
-		<script type = "text/javascript" src="js/jquery-1.9.1.js"></script>
-		<script type = "text/javascript" src="js/jquery.mobile-1.3.1.js"></script>
-		<script type = "text/javascript" src="js/jquery.validate.min.js"></script>
-		
-		<!--main.js file goes here-->
 		<script type = "text/javascript" src = "js/main.js"></script>
-	
-	</head>
-	
-	<body>
-		
-		<!- Home page goes here ------------------------------------------------>
-		
-		<section id = "homePage" data-role = "page">
-			
-			<header data-role = "header" data-id="hdtop" data-position="fixed">
-				<h1>Libby</h1>
-				<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true" class = "ui-btn-right">Info</a>
-			</header>
-						
-			<!-- Content goes here --------->
-			<div data-role = "content" id = "container">
-				
-				<!--<ul data-role = "listview" data-filter="true" data-inset = "true" data-corners = "true">
-					<li data-role="list-divider" data-link="audio"><span class = "marginLeft">Audio Entries</span><span class="ui-icon ui-icon-plus ui-icon-shadow listIcon"></span></li>
-					<li><a href="#detailsPage" data-transition = "slide"><img src = "images/smAudio.png" class="ui-li-icon ui-corner-none"/><span><p><strong>La-la Di</strong></p></span><p class = "ui-li-aside">Audio Tape</p></a></li>
-					<li data-role="list-divider" data-link="video"><span class = "marginLeft">Video Entries</span><span class="ui-icon ui-icon-plus ui-icon-shadow listIcon"></span></li>
-					<li><a href="#detailsPage" data-transition = "slide"><img src = "images/smVideo.png" class="ui-li-icon ui-corner-none"/><span><p><strong>Shoot Me Now</strong></p></span><p class = "ui-li-aside">Video Dvd</p></a></li>
-				</ul>-->
-			</div>
-			
-		<!-- Footer goes here -------------->
-		<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
-			<div data-role="controlgroup" data-type="horizontal" align = "center">
-				<a href="#homePage" data-role = "button" data-icon="home" class = "ui-btn-active">Home</a>
-				<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
-				<a href="#social" data-role = "button" data-icon="bars">Social</a>
-				<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
-			</div>
-		</footer>
-		
-		</section> <!-- End of Home page -->
-		
-		
-		<!--News Feed page goes here----------------------------------------------
-		-------------------------------------------------------------------------->
-		<section id = "newsFeed" data-role = "page">
-			
-			<header data-role = "header" data-id="hdtop" data-position="fixed">
-				<h1>Recently Added</h1>
-				<a href="#homePage" class = "bkbtn" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="g" data-inline="true">Back</a>
-				<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true">Info</a>
-			</header>
-						
-			<!-- Content goes here --------->
-			<div data-role = "content" class = "content">
-				<h5>This is a list all the items organized by date (most recent one first).</h5>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-				   Vivamus aliquet ultrices augue ac mattis. Pellentesque sed tellus metus. 
-				   Nulla mollis, turpis non bibendum euismod, massa sapien mollis leo, in bibendum justo sem nec dolor. 
-				   Nam eget risus urna. Nam leo risus, convallis eget blandit vel, fermentum vitae felis. 
-				   Fusce id molestie tellus. Cras ut est non libero porta ultrices quis in mauris.
-				</p>
-				
-			</div>
-			
-			<!-- Footer goes here -------------->
-			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
-				<div data-role="controlgroup" data-type="horizontal" align = "center">
-					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
-					<a href="#social" data-role = "button" data-icon="bars">Social</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
-				</div>
-			</footer>
-		
-		</section> <!-- End of News Feed page -->
-		
-		
-		<!--About page goes here----------------------------------------------
-		-------------------------------------------------------------------------->
-		<section id = "aboutPage" data-role = "page">
-			
-			<header data-role = "header" data-id="hdtop" data-position="fixed">
-				<h1>About Libby</h1>
-				<a href="#homePage" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="g" data-inline="true">Back</a>
-				<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true" class = "ui-btn-active">Info</a>
-			</header>
-			
-			<!-- Content goes here --------->
-			<div data-role = "content" class = "content">
-				<h5>Information about this application goes here.</h5>
-				<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-					Vivamus aliquet ultrices augue ac mattis. Pellentesque sed tellus metus. 
-					Nulla mollis, turpis non bibendum euismod, massa sapien mollis leo, in bibendum justo sem nec dolor. 
-					Nam eget risus urna. Nam leo risus, convallis eget blandit vel, fermentum vitae felis. 
-					Fusce id molestie tellus. Cras ut est non libero porta ultrices quis in mauris.
-				</p>
-				
-			</div>
-			
-			<!-- Footer goes here -------------->
-			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
-				<div data-role="controlgroup" data-type="horizontal" align = "center">
-					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
-					<a href="#social" data-role = "button" data-icon="bars">Social</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
-				</div>
-			</footer>
-		
-		</section> <!-- End of About page -->
-		
-		<!--List Details page goes here---------------------------------------------- 
-  	   	
-		--------------------------------------------------------------------------> 
-  	   	
-		<section id = "detailsPage" data-role = "page"> 
- 	   		<header data-role = "header" data-id="hdtop" data-position="fixed"> 
- 	   			<h1>Details</h1>
- 	   			<a href="#homePage" class = "bkbtn" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="g" data-inline="true">Back</a> 
-  	   			<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true">Info</a> 
-  	   		</header> 
- 	   	
-			<div id ="editDeleteBtn" align = "center"> 
-				<a href ="#" data-role ="button" data-icon ="edit" data-iconpos ="left" data-inline ="true" data-theme = "b" class = "editBtn">Edit</a> 
-				<a href ="#" data-role ="button" data-icon ="delete" data-iconpos ="left" data-inline ="true" data-theme = "a" class = "delBtn">Delete</a> 
-			</div> 
-			
-			<!-- Content goes here ---------> 
-			<div data-role = "content" id = "contentSpace"> 
-				 
-				
-		   </div> 
-			
-					
-		   <!-- Footer goes here --------------> 
-		   <footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed"> 
-				<div data-role="controlgroup" data-type="horizontal" align = "center"> 
-					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>          
-					<a href="#social" data-role = "button" data-icon="bars">Social</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a> 
-			
-				</div> 
-		   </footer> 
-		</section> <!-- End of List Details page -->
-		
-		<!--New Entry page goes here----------------------------------------------
-		-------------------------------------------------------------------------->
-		<section id = "newEntry" data-role = "page">
-			
-			<header data-role = "header" data-id="hdtop" data-position="fixed">
-				<h1>Add Entry</h1>
-				<a href="#homePage" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="g" data-inline="true">Back</a>
-				<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true">Info</a>
-			</header>
-					
-			<!-- Content goes here -->
-			<div data-role = "content" class = "content">
-				<form action = "" method = "post" id = "firstForm">
-					<div data-role = "fieldcontain">
-						<label for = "mediaChoice">Choose Media Class:</label>
-						<select name = "mediaChoice" id = "mediaChoice" data-native-menu = "true"/>
-							<optgroup label = "Audio">
-								<option value = "AudioCd" selected = "selected">AudioCd</option>				
-								<option value = "AudioTape">AudioTape</option>				
-								<option value = "AudioRecord">AudioRecord</option>		
-							</optgroup>		
-							<optgroup label = "Video">
-								<option value = "VideoDvd">VideoDvd</option>				
-								<option value = "VideoCd">VideoCd</option>				
-								<option value = "VideoTape">VideoTape</option>		
-							</optgroup>
-							<optgroup label = "Data">
-								<option value = "DataDvd">DataDvd</option>				
-								<option value = "DataCd">DataCd</option>				
-								<option value = "MemoryStick">MemoryStick</option>		
-							</optgroup>
-							<optgroup label = "Other">
-								<option value = "eBook">eBook</option>				
-								<option value = "eDocument">eDocument</option>				
-							</optgroup>
-						</select>
-						<p class = "hintText">Select a category for your entry.</p>		
-					</div>
-					
-					<!-- Input Fields Start Here -->
-					<div data-role = "fieldcontain">					
-						<label for = "nameItem"><strong>*</strong>&nbsp;Name:</label>
-						<input type = "text" name = "nameItem" id = "nameItem" class = "required"/>
-						<p class = "hintText">Example: "Car"</p>
-					</div>
-					
-					<div data-role = "fieldcontain">
-						<label for = "genreItem"><strong>*</strong>&nbsp;Genre/Type:</label>
-						<input type = "text" name = "genreItem" id = "genreItem" class = "required"/>
-						<p class = "hintText">Example: "Sedan"</p>
-					</div>
-					
-					<div data-role = "fieldcontain">
-						<label for = "lengthItem">Length:</label>
-						<input type = "text" name = "lengthItem" id = "lengthItem" class = "number"/>
-						<p class = "hintText">Example: "120". Use only if applicable.</p>
-					</div>
-					
-					<div data-role = "fieldcontain">
-						<label for = "pubDate">Release<small>&nbsp;-or-&nbsp;</small>Manufacture Date:</label>
-						<input type = "date" name = "pubDate" id = "pubDate" default = "01-01-2001"/>
-						<p class = "hintText">The date when the item was released or manufactured.</p>
-					</div>
-					
-					<div data-role = "fieldcontain">
-						<label for = "datePurchase">Purchase Date:</label>
-						<input type = "date" name = "purchaseDate" id = "purchaseDate" />
-					</div>
-					
-					<div data-role = "fieldcontain">
-						<label for = "notes" id = "notesLabel">Additional Notes:</label>
-						<textarea name = "noteName" id="notes"></textarea>
-					</div>
-					
-					
-					
-					<input type = "submit"  value = "Submit" data-inline="true" data-theme = "b" data-icon = "check" id = "submitBt"/>
-					<input type = "reset" value = "Clear" data-inline="true" data-theme = "a" data-icon = "delete" id = "clearBt"/>
-					
-					
-				
-				</form> <!-- form ends here -->
-			</div> <!-- content section ends here -->
-			
-			<!-- Footer goes here -------------->
-			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
-				<div data-role="controlgroup" data-type="horizontal" align = "center">
-					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newEntry" data-role = "button" data-icon="plus" class = "ui-btn-active" id = "newBtn">New</a>       	
-					<a href="#social" data-role = "button" data-icon="bars">Social</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
-				</div>
-			</footer>
-		
-		</section> <!-- End of New Entry page -->
-
-		<!--Social page goes here----------------------------------------------
-		-------------------------------------------------------------------------->
-		<section id = "social" data-role = "page">
-			
-			<header data-role = "header" data-id="hdtop" data-position="fixed">
-				<h1>Social</h1>
-				<a href="#homePage" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="g" data-inline="true">Back</a>
-				<a href="#aboutPage" data-role="button" data-icon="info" data-iconpos="notext" data-theme="g" data-inline="true">Info</a>
-			</header>
-					
-			<!-- Content goes here -->
-			<div data-role = "content" class = "content">
-				<div data-role="collapsible-set" data-theme="a" data-content-theme="a">
-				<div data-role="collapsible">
-					<h3>Cloudant API</h3>
-					<ul data-role="listview" data-inset="true" id="grColl">
-					 <!-- dynamic code input -->
-				</div>
-
-				<div data-role="collapsible">
-					<h3>Instagram API</h3>
-					<ul data-role="listview" data-inset="true" id="instColl">
-					 <!-- dynamic code input -->
-				</div>
-			</div> <!-- content section ends here -->
-			
-			<!-- Footer goes here -------------->
-			<footer data-role = "footer" data-theme = "a" data-id = "ftbottom" data-position="fixed">
-				<div data-role="controlgroup" data-type="horizontal" align = "center">
-					<a href="#homePage" data-role = "button" data-icon="home">Home</a>
-					<a href="#newEntry" data-role = "button" data-icon="plus">New</a>       	
-					<a href="#social" data-role = "button" data-icon="bars" class="ui-btn-active" id="newBtn">Social</a>
-					<a href="#newsFeed" data-role = "button" data-icon="grid">Recent</a>
-				</div>
-			</footer>
-		
-		</section> <!-- End of Social page -->
-		
-	</body>
-
-</html>
+		</body>
+	</html>
