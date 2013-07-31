@@ -65,17 +65,26 @@
 						<div data-role="collapsible">
 						    <h5>GeoLocation Feature</h5>
 						    <ul data-role="listview" data-inset="true" id="geoFt">
-						       	<button id="geoBtn" data-inline="true">Get Geo</button>
-   								
+						       
+						       <label for="slider-flip-m2" id="lbGeo">Turn On the Geo-Location</label>
+								<select name="slider-flip-m2" id="slider-flip-m2" data-role="slider" data-mini="true">
+   									<option value="off" selected="">Off</option>
+    								<option value="on">On</option>
+								</select>	
+
 						    	<!-- Dynamic Code -->
 						    </ul>
 						</div>
 						<div data-role="collapsible">
 						    <h5>Compass Feature</h5>
 						    <ul data-role="listview" data-inset="true" id="storFt">
-						       	<p>
-   									<a href="#" data-role="button" id="compBtn" data-inline="true">Get Compas</a>
-   								</p>
+						       	
+   								<label for="slider-flip-m" id="lbCompass">Turn On the Compass</label>
+								<select name="slider-flip-m" id="slider-flip-m" data-role="slider" data-mini="true">
+   									<option value="off" selected="">Off</option>
+    								<option value="on">On</option>
+								</select>
+   								<img id="compass" src="images/compass.png" style="display:none;"/>
 						       	<!-- Dynamic Code -->
 						    </ul>
 						</div>
@@ -111,19 +120,8 @@
 				</section>
 			</section>
 
-			<section data-role="page" id="dynPage">
-				<section data-role = "header" data-id = "hdtop" data-theme="c" data-content-theme="c" data-position="fixed" data-add-back-btn="true">
-					<h3>Libby</h3>
-				</section>
+			
 
-				<section data-role = "content">
-					<iframe id="iFr"></iframe>
-				</section>
-
-				<section data-role = "footer" data-id = "ftbottom" data-position="fixed" data-theme="c" data-content-theme="c">
-					<h5>&reg;&nbsp;2013</h5>
-				</section>
-			</section>
 		<script type = "text/javascript" src="cordova.js"></script>
 		<script type = "text/javascript" src = "js/main.js"></script>
 		</body>

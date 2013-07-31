@@ -70,85 +70,136 @@ $(document).on('pageinit', '#mainPage', function(){
 	});
 
 	//geolocaltion options
-	$('#geoBtn').click(function(){
+	$('#slider-flip-m2').on('slidestop', function(){
 		 
-		var onSuccess = function(position) {
-	    alert('Latitude: '          + position.coords.latitude          + '\n' +
-	          'Longitude: '         + position.coords.longitude         + '\n' +
-	          'Altitude: '          + position.coords.altitude          + '\n' +
-	          'Accuracy: '          + position.coords.accuracy          + '\n' +
-	          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-	          'Heading: '           + position.coords.heading           + '\n' +
-	          'Speed: '             + position.coords.speed             + '\n' +
-	          'Timestamp: '         + position.timestamp                + '\n');
-		};
-
-		// onError Callback receives a PositionError object
-	
-		function onError(error) {
-    		alert('code: '    + error.code    + '\n' +
-         	 	'message: ' + error.message + '\n');
+		var tempGeo = $(this).find('option:selected').attr('value');
+		
+		if(tempGeo == "off") {
+			//code for off position
+		}
+		
+		else if(tempGeo == "on") {
+			//code for on position
 		}
 
-		navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 3000,
-			timeout: 5000, enableHighAccuracy: true});
+
+		
 	});
 
-	//compas options
-	$('#compBtn').click(function(){
-		function onSuccess(heading) {
-    		if(heading.magneticHeading >= 11.25 && heading.magneticHeading <= 33.75) {
-    			alert('Heading: North-northeast');
-    		}
-    		else if(heading.magneticHeading >= 33.75 && heading.magneticHeading <= 56.25) {
-    			alert('Heading: North-East');
-    		}
-    		else if(heading.magneticHeading >= 56.25 && heading.magneticHeading <= 78.75) {
-    			alert('Heading: East');
-    		}
-    		else if(heading.magneticHeading >= 78.75 && heading.magneticHeading <= 101.25) {
-    			alert('Heading: East-Southeast');
-    		}
-    		else if(heading.magneticHeading >= 101.25 && heading.magneticHeading <= 123.55) {
-    			alert('Heading: South-East');
-    		}
-    		else if(heading.magneticHeading >= 123.55 && heading.magneticHeading <= 146.25) {
-    			alert('Heading: South-Southeast');
-    		}
-    		else if(heading.magneticHeading >= 146.25 && heading.magneticHeading <= 168.75) {
-    			alert('Heading: South');
-    		}
-    		else if(heading.magneticHeading >= 168.75 && heading.magneticHeading <= 191.25) {
-    			alert('Heading: South-Southwest');
-    		}
-    		else if(heading.magneticHeading >= 191.25 && heading.magneticHeading <= 213.75) {
-    			alert('Heading: South-West');
-    		}
-    		else if(heading.magneticHeading >= 213.75 && heading.magneticHeading <= 236.25) {
-    			alert('Heading: West-Southwest');
-    		}
-    		else if(heading.magneticHeading >= 236.25 && heading.magneticHeading <= 258.75) {
-    			alert('Heading: West');
-    		}
-    		else if(heading.magneticHeading >= 258.75 && heading.magneticHeading <= 281.25) {
-    			alert('Heading: West-Northwest');
-    		}
-    		else if(heading.magneticHeading >= 281.25 && heading.magneticHeading <= 303.75) {
-    			alert('Heading: North-West');
-    		}
-    		else if(heading.magneticHeading >= 303.75 && heading.magneticHeading <= 326.25) {
-    			alert('Heading: North-Northwest');
-    		}
-    		else if(heading.magneticHeading >= 326.25 && heading.magneticHeading <= 348.75) {
-    			alert('Heading: North');
-    		}
-		};
+	//compass options
+	$('#slider-flip-m').on('slidestop', function(){
+		
+		$('#storFt').listview().listview('refresh');
+		var tempVal = $(this).find('option:selected').attr('value');
+		if(tempVal == "off") {
+			
+			$('#compass').css('display', 'none');
+			$('#lbCompass').html('Turn On the Compass');
+			$('#storFt').listview().listview('refresh');
+			navigator.compass.clearWatch(watchID);			    	    
+	    } //if ends here
+	    
+	    else if(tempVal == 'on') {
+	    	
+	    	//code for turning off compass
+	    	
+	    	$('#compass').css('display', 'inline');
+	    	$('#lbCompass').html('Scanning ...');
+	    	$('#storFt').listview().listview('refresh');
 
-		function onError(error) {
-   			alert('CompassError: ' + error.code);
-		};
+	    	function onSuccess(heading) {
+	    		if(heading.magneticHeading >= 11.25 && heading.magneticHeading <= 33.75) {
+	    			//$('#lbCompass').attr('text', 'You are heading North-Northeast');
+	    			$('#lbCompass').html('Heading North-Northeast');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 33.75 && heading.magneticHeading <= 56.25) {
+	    			//alert('Heading: North-East');
+	    			$('#lbCompass').html('Heading North-East');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 56.25 && heading.magneticHeading <= 78.75) {
+	    			//alert('Heading: East');
+	    			$('#lbCompass').html('Heading East');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 78.75 && heading.magneticHeading <= 101.25) {
+	    			//alert('Heading: East-Southeast');
+	    			$('#lbCompass').html('Heading East-Southeast');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 101.25 && heading.magneticHeading <= 123.55) {
+	    			//alert('Heading: South-East');
+	    			$('#lbCompass').html('Heading South-East');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 123.55 && heading.magneticHeading <= 146.25) {
+	    			//alert('Heading: South-Southeast');
+	    			$('#lbCompass').html('Heading South-Southeast');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 146.25 && heading.magneticHeading <= 168.75) {
+	    			//alert('Heading: South');
+	    			$('#lbCompass').html('Heading South');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 168.75 && heading.magneticHeading <= 191.25) {
+	    			//alert('Heading: South-Southwest');
+	    			$('#lbCompass').html('Heading South-Southwest');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 191.25 && heading.magneticHeading <= 213.75) {
+	    			//alert('Heading: South-West');
+	    			$('#lbCompass').html('Heading South-West');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 213.75 && heading.magneticHeading <= 236.25) {
+	    			//alert('Heading: West-Southwest');
+	    			$('#lbCompass').html('Heading West-Southwest');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 236.25 && heading.magneticHeading <= 258.75) {
+	    			//alert('Heading: West');
+	    			$('#lbCompass').html('Heading West');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 258.75 && heading.magneticHeading <= 281.25) {
+	    			//alert('Heading: West-Northwest');
+	    			$('#lbCompass').html('Heading West-Northwest');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 281.25 && heading.magneticHeading <= 303.75) {
+	    			//alert('Heading: North-West');
+	    			$('#lbCompass').html('Heading North-West');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 303.75 && heading.magneticHeading <= 326.25) {
+	    			//alert('Heading: North-Northwest');
+	    			$('#lbCompass').html('Heading North-Northwest');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		else if(heading.magneticHeading >= 326.25 && heading.magneticHeading <= 348.75) {
+	    			//alert('Heading: North');
+	    			$('#lbCompass').html('Heading North');
+					$('#storFt').listview().listview('refresh');
+	    		}
+	    		var rot = 340 - heading.magneticHeading;
+	    		$('#compass').css({'-webkit-transform': 'rotate('+rot+'deg)'});
+	    	} //end succ. function
 
-		navigator.compass.getCurrentHeading(onSuccess, onError);
+	    	function onError(error) {
+   				alert('CompassError: ' + error.code);
+			};
+
+			var cpOptions = { frequency: 100 };
+
+        	watchID = navigator.compass.watchHeading(onSuccess, onError, cpOptions);
+        		    
+	    } // end flip on
+
+		
+
+
 	});
 
 	//accelerometer options
