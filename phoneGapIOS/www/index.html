@@ -93,16 +93,23 @@
    									<option value="off" selected="">Off</option>
     								<option value="on">On</option>
 								</select>
-   								<img id="compass" src="images/compass.png" style="display:none;"/>
+   								<img class="libPh" id="compass" src="images/compass.png" style="display:none;"/>
 						       	<!-- Dynamic Code -->
 						    </ul>
 						</div>
 						<div data-role="collapsible">
 						    <h5>Accelerometer Feature</h5>
 						    <ul data-role="listview" data-inset="true" id="accFt">
-						       	<p>
-   									<a href="#" data-role="button" id="accBtn" data-inline="true">Get Acc</a>
-   								</p>
+						       	
+						       	<label for="slider-flip-m3" id="lbAcc">Turn On the Accelerometer</label>
+								<select name="slider-flip-m3" id="slider-flip-m3" data-role="slider" data-mini="true">
+   									<option value="off" selected="">Off</option>
+    								<option value="on">On</option>
+								</select>
+   								<img class="arrIcon" id="arrUp" src="images/arrow_up.png" style="display:none;"/>
+   								<img class="arrIcon" id="arrDown" src="images/arrow_down.png" style="display:none;"/>
+   								<img class="arrIcon" id="arrLeft" src="images/arrow_left.png" style="display:none;"/>
+   								<img class="arrIcon" id="arrRight" src="images/arrow_right.png" style="display:none;"/>
 						       	<!-- Dynamic Code -->
 						    </ul>
 						</div>
@@ -112,6 +119,17 @@
 					<h5>&#x27b2;&nbsp;Resources</h5>
 					<div data-role="collapsible-set" data-theme="c" data-content-theme="c">
 						<div data-role="collapsible">
+						    <h5>Week 1 Post</h5>
+						    
+						       	<p><b>Please describe any design and functionality intentions you may have for your Demo app components this month.</b></p>
+						       	<p>erhaps one of the hardest elements of design and functionality for me this month is to integrate the academic expectation to a concept that I wanted to polish. I've been working on a CRUD app and I wanted very much to learn how to connect it to an API, and perhaps even learn how to create my own PHP API. But I have been finding lots of obstacles in my way, from not being able to find good tutorials for beginners (about PHP APIs) to understanding the RESTful software architecture. We shall see.</p>
+						       	<p><b>Briefly describe some past 'lessons learned' regarding work-flow as it relates to research, design, development, etc.</b></p>
+						       	<p>The design element is growing on me. I'm realizing how intrinsic this field can be. In the past I would think about design as drawing pretty buttons and setting up nice interfaces. Designing a good application implies so much more than that. Understanding data-flow, data-bases, usability, optimization (and many other core concepts used in software development) is pivotal, and I think we are heading towards the right direction.</p>
+						       	<!-- Dynamic Code -->
+						    
+						</div>
+
+						<div data-role="collapsible">
 						    <h5>Week 2 Post</h5>
 						    
 						       	<p><b>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?</b></p>
@@ -120,7 +138,24 @@
 						       	<!-- Dynamic Code -->
 						    
 						</div>
+
+						<div data-role="collapsible">
+						    <h5>Week 3 Post</h5>
+						    
+						       	<p><b>Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?</b></p>
+						       	<p>JSONP stands for “JavaScript Object Notation with padding”, which is a nice easy way of writing data that is both human and computer readable. JSONP is an extension of “JSON” that allows a bridge over the “cross- domain” limitation. This limitation impedes clients from sending data-requests to several domains preventing XXS (Cross-site scripting) security vulnerabilities. The way JSONP helps with this issues is by creating a “call- back” for filtering. If we do not utilize JSONP for our API it would be virtually impossible to pull out from an API because of the XXS security measure that most browsers have set up.</p>
+
+						       	<p><b>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</b></p>
+						       	<p>JSON data, as well as JSONP are optimized for mobile devices and portability (in general). With the proper conversion, the JSONP data can be added to the native STORAGE MySQL database service into any mobile platform.</p>
+
+						       	<!-- Dynamic Code -->
+						    
+						</div>
+
+						
 					</div>
+
+
 
 				</section>
 
