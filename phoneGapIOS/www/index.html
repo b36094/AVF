@@ -22,6 +22,7 @@
 			<script type = "text/javascript" src="js/jquery-1.9.1.js"></script>
 			<script type = "text/javascript" src="js/jquery.mobile-1.3.1.js"></script>
 			<script type = "text/javascript" src="js/jquery.validate.min.js"></script>
+			<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
 			
 			
@@ -34,6 +35,7 @@
 				</section>
 
 				<section data-role = "content">
+					
 					<h5>&#x27b2;&nbsp;APIs</h5>
 					<div data-role="collapsible-set" data-theme="c" data-content-theme="c">
 						<div data-role="collapsible">
@@ -71,10 +73,17 @@
    									<option value="off" selected="">Off</option>
     								<option value="on">On</option>
 								</select>	
-
+								
+								<div id="iFr" style="display:none;">
+  									
+								</div>
 						    	<!-- Dynamic Code -->
 						    </ul>
+							
+
 						</div>
+
+						
 						<div data-role="collapsible">
 						    <h5>Compass Feature</h5>
 						    <ul data-role="listview" data-inset="true" id="storFt">
@@ -124,5 +133,7 @@
 
 		<script type = "text/javascript" src="cordova.js"></script>
 		<script type = "text/javascript" src = "js/main.js"></script>
+		
+		
 		</body>
 	</html>

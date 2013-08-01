@@ -76,10 +76,56 @@ $(document).on('pageinit', '#mainPage', function(){
 		
 		if(tempGeo == "off") {
 			//code for off position
+			$('#iFr').css('display','none');
+			$('#lbGeo').html('Turn On the Geo-Location');
+			$('#geoFt').listview().listview('refresh');
 		}
 		
 		else if(tempGeo == "on") {
 			//code for on position
+			$('#iFr').css('display','block');
+			
+			$('#lbGeo').html('Current Location');
+			
+			function initialize() {
+  				var mapOptions = {
+    				zoom: 8,
+    				center: new google.maps.LatLng(-34.397, 150.644),
+   					mapTypeId: google.maps.MapTypeId.ROADMAP
+  				};
+  				var map = new google.maps.Map(document.getElementById('iFr'),mapOptions);
+			}
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+
+			
+			$('#geoFt').listview().listview('refresh');
+			
+			function onSuccess(position) {
+				
+
+    			var myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+				map  = new google.maps.Map(document.getElementById('iFr'), {
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					center: myLocation,
+					zoom: 15
+    			});
+					
+				var marker = new google.maps.Marker({
+    				position: map.getCenter(),
+   					map: map,
+    				title: 'Click to zoom'
+  				});
+			
+				navigator.geolocation.clearWatch(watchId);
+			}
+			 
+			function onError(error){
+
+			}
+
+			var watchId = navigator.geolocation.watchPosition(onSuccess, onError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+
 		}
 
 
